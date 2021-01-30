@@ -17,8 +17,8 @@
     "prod:logs": "pm2 logs --update-env star-machProd",
     "test": "jest",
     "verify-tests": "jest --coverage",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "predeploy": "npm start",
+    "deploy": "gh-pages -d start"
   },
   "jest": {
     "modulePaths": [
