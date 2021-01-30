@@ -1,13 +1,16 @@
 {
-  "homepage": "https://0adk.github.io/stars-match-react/",
+  "homepage": "https://0adk.github.io/stars-match-react",
   "name": "star-mach",
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "npm run build && gh-pages -d public",
     "eslint": "eslint \"src/**/*.js\"",
     "start": "concurrently \"npm run dev:server\" \"npm run dev:bundler\"",
     "dev:server": "cross-env NODE_PATH=./src nodemon --exec \"babel-node src/server/server.js\" --ignore .reactful.json --ignore public/",
     "dev:bundler": "webpack -wd",
+    "build": "webpack -p",
     "build:react": "cross-env NODE_ENV=production webpack --progress -p",
     "build:node": "babel src -d build --config-file ./babel-node.config.js --copy-files",
     "build:all": "npm install && npm run build:react && npm run build:node",
@@ -16,9 +19,7 @@
     "prod:reload": "pm2 reload --update-env star-machProd",
     "prod:logs": "pm2 logs --update-env star-machProd",
     "test": "jest",
-    "verify-tests": "jest --coverage",
-    "predeploy": "npm start",
-    "deploy": "gh-pages -d start"
+    "verify-tests": "jest --coverage"
   },
   "jest": {
     "modulePaths": [

@@ -16,6 +16,7 @@ const config = {
   output: {
     path: path.resolve('public', 'bundles'),
     filename: isDev ? '[name].js' : '[name].[chunkhash].js',
+    publicPath: '/stars-match-react/'
   },
   module: {
     rules: [
