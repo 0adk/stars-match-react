@@ -4,8 +4,6 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "npm run build && gh-pages -d public",
     "eslint": "eslint \"src/**/*.js\"",
     "start": "concurrently \"npm run dev:server\" \"npm run dev:bundler\"",
     "dev:server": "cross-env NODE_PATH=./src nodemon --exec \"babel-node src/server/server.js\" --ignore .reactful.json --ignore public/",
@@ -69,7 +67,6 @@
     "eslint": "^7.10.0",
     "eslint-plugin-react": "^7.21.3",
     "eslint-plugin-react-hooks": "^4.1.2",
-    "gh-pages": "^3.1.0",
     "jest": "^26.5.2",
     "nodemon": "^2.0.4",
     "reactful": "^3.1.3"
